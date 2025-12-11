@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Orden - La Buena Mesa</title>
+    <link rel="stylesheet" href="../CSS/crearorden.css">
+</head>
+<body>
+    <header>
+        <h1>La Buena Mesa</h1>
+        <nav>
+            <a href="inicio.html">Inicio</a>
+            <a href="menu.html">Menú</a>
+            <a href="quienessomos.html">Nosotros</a>
+            <a href="crearorden.html">🛒 Ordenar</a>
+        </nav>
+    </header>
+
+    <div class="order-hero">
+        <h1>🛒 Tu Carrito</h1>
+        <p>Revisa tu pedido antes de confirmar</p>
+    </div>
+
+    <div class="order-container">
+        <div class="cart-section">
+            <div class="cart-items">
+                <h2>Artículos en tu carrito (3)</h2>
+                
+                <div class="cart-item">
+                    <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=120&h=120&fit=crop" alt="Salmón" class="cart-img">
+                    <div class="cart-info">
+                        <h3>Salmón Grill</h3>
+                        <p>Con vegetales frescos y reducción de vino</p>
+                        <div class="tags">
+                            <span class="tag">Sin Gluten</span>
+                        </div>
+                    </div>
+                    <div class="cart-quantity">
+                        <button class="qty-btn" onclick="changeQty(1, -1)">-</button>
+                        <span class="qty" id="qty-1">2</span>
+                        <button class="qty-btn" onclick="changeQty(1, 1)">+</button>
+                    </div>
+                    <div class="cart-price">
+                        <span class="price">$36.00</span>
+                        <button class="btn-remove" onclick="removeItem(1)">🗑️</button>
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=120&h=120&fit=crop" alt="Pasta" class="cart-img">
+                    <div class="cart-info">
+                        <h3>Pasta Alfredo</h3>
+                        <p>Fettuccine con crema y parmesano</p>
+                        <div class="tags">
+                            <span class="tag vegetarian">Vegetariano</span>
+                        </div>
+                    </div>
+                    <div class="cart-quantity">
+                        <button class="qty-btn" onclick="changeQty(2, -1)">-</button>
+                        <span class="qty" id="qty-2">1</span>
+                        <button class="qty-btn" onclick="changeQty(2, 1)">+</button>
+                    </div>
+                    <div class="cart-price">
+                        <span class="price">$14.00</span>
+                        <button class="btn-remove" onclick="removeItem(2)">🗑️</button>
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=120&h=120&fit=crop" alt="Tiramisú" class="cart-img">
+                    <div class="cart-info">
+                        <h3>Tiramisú Clásico</h3>
+                        <p>Con café espresso y mascarpone</p>
+                    </div>
+                    <div class="cart-quantity">
+                        <button class="qty-btn" onclick="changeQty(3, -1)">-</button>
+                        <span class="qty" id="qty-3">1</span>
+                        <button class="qty-btn" onclick="changeQty(3, 1)">+</button>
+                    </div>
+                    <div class="cart-price">
+                        <span class="price">$7.50</span>
+                        <button class="btn-remove" onclick="removeItem(3)">🗑️</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-summary">
+                <h2>Resumen de la Orden</h2>
+                
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="subtotal">$57.50</span>
+                </div>
+                
+                <div class="summary-row">
+                    <span>IVA (12%)</span>
+                    <span id="tax">$6.90</span>
+                </div>
+                
+                <div class="summary-row">
+                    <span>Delivery</span>
+                    <span id="delivery">$2.50</span>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span id="total">$66.90</span>
+                </div>
+
+                <div class="order-type">
+                    <h3>Tipo de Orden</h3>
+                    <label class="radio-option">
+                        <input type="radio" name="orderType" value="delivery" checked>
+                        <span>🛵 Delivery</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="orderType" value="pickup">
+                        <span>🏪 Recoger</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="orderType" value="dinein">
+                        <span>🍽️ Comer aquí</span>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <h3>Dirección de Entrega</h3>
+                    <select class="form-select">
+                        <option>Av. Solano 123, Cuenca</option>
+                        <option>Calle Larga 456, Cuenca</option>
+                        <option>+ Agregar nueva dirección</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <h3>Método de Pago</h3>
+                    <select class="form-select">
+                        <option>💳 Tarjeta de Crédito/Débito</option>
+                        <option>💵 Efectivo</option>
+                        <option>📱 Transferencia Bancaria</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <h3>Instrucciones Especiales</h3>
+                    <textarea 
+                        placeholder="Ej: Sin cebolla, tocar el timbre 2 veces..."
+                        rows="3"
+                    ></textarea>
+                </div>
+
+                <button class="btn-confirm" onclick="confirmOrder()">
+                    Confirmar Pedido 🎉
+                </button>
+                
+                <a href="menu.html" class="btn-continue">
+                    ← Seguir Comprando
+                </a>
+            </div>
+        </div>
+
+        <div class="coupon-section">
+            <h3>¿Tienes un cupón?</h3>
+            <div class="coupon-input">
+                <input type="text" placeholder="Ingresa tu código">
+                <button onclick="applyCoupon()">Aplicar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 La Buena Mesa - Todos los derechos reservados</p>
+        <p>📍 Av. Principal 123, Cuenca | 📞 (07) 123-4567 | ✉️ info@labuenamesa.com</p>
+    </footer>
+
+    <script src="../js/orden.js"></script>
+</body>
+</html>

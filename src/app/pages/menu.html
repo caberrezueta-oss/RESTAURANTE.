@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Menú - La Buena Mesa</title>
+    
+    <link rel="stylesheet" href="../CSS/menu.css"> 
+</head>
+
+<body>
+    <header>
+        <h1>La Buena Mesa</h1>
+        <nav>
+            <a href="inicio.html">Inicio</a>
+            <a href="menu.html">Menú</a>
+            <a href="quienessomos.html">Nosotros</a>
+            <a href="crearorden.html">🛒 Ordenar</a>
+        </nav>
+    </header>
+
+    <div class="menu-hero">
+        <h1>Nuestro Menú</h1>
+        <p>Descubre nuestras especialidades culinarias</p>
+    </div>
+
+    <div class="category-filters">
+        <button class="category-btn active" onclick="filterMenu('all')">Todos</button>
+        <button class="category-btn" onclick="filterMenu('principales')">Platos Principales</button>
+        <button class="category-btn" onclick="filterMenu('bebidas')">Bebidas</button>
+        <button class="category-btn" onclick="filterMenu('postres')">Postres</button>
+    </div>
+
+    <div class="search-bar">
+        <input 
+            type="text" 
+            class="search-input" 
+            placeholder="🔍 Buscar platos..."
+            id="searchInput"
+            onkeyup="searchMenu()"
+        >
+    </div>
+
+    <section class="section">
+        <h2>Platos Principales</h2>
+        
+        <div class="menu-grid" id="menuGrid">
+            
+            <div class="menu-item" data-category="principales">
+                <span class="badge">Popular</span>
+                <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=400&h=250&fit=crop" alt="Salmón grill">
+                <div class="menu-content">
+                    <span class="category-label">Plato Principal</span>
+                    <div class="menu-header">
+                        <h3>Salmón Grill</h3>
+                        <span class="price">$18.00</span>
+                    </div>
+                    <p class="description">
+                        Servido con una selección de vegetales frescos asados, 
+                        papas al romero y reducción de vino blanco con hierbas finas.
+                    </p>
+                    <div class="tags">
+                        <span class="tag gluten-free">Sin Gluten</span>
+                        <span class="tag">Recomendado</span>
+                    </div>
+                    <div class="menu-footer">
+                        <div class="rating">
+                            ⭐ 4.9 <span>(156)</span>
+                        </div>
+                        <button class="btn-add">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-item" data-category="principales">
+                <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400&h=250&fit=crop" alt="Pasta Alfredo">
+                <div class="menu-content">
+                    <span class="category-label">Plato Principal</span>
+                    <div class="menu-header">
+                        <h3>Pasta Alfredo</h3>
+                        <span class="price">$14.00</span>
+                    </div>
+                    <p class="description">
+                        Clásica pasta fresca fettuccine con salsa de crema, 
+                        parmesano reggiano y un toque de nuez moscada.
+                    </p>
+                    <div class="tags">
+                        <span class="tag vegetarian">Vegetariano</span>
+                    </div>
+                    <div class="menu-footer">
+                        <div class="rating">
+                            ⭐ 4.7 <span>(203)</span>
+                        </div>
+                        <button class="btn-add">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-item" data-category="principales">
+                <span class="badge new">Nuevo</span>
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=250&fit=crop" alt="Pizza Margarita">
+                <div class="menu-content">
+                    <span class="category-label">Plato Principal</span>
+                    <div class="menu-header">
+                        <h3>Pizza Margarita</h3>
+                        <span class="price">$12.00</span>
+                    </div>
+                    <p class="description">
+                        Tomate San Marzano, mozzarella di bufala, albahaca fresca. 
+                        Cocida en horno de leña tradicional.
+                    </p>
+                    <div class="tags">
+                        <span class="tag vegetarian">Vegetariano</span>
+                    </div>
+                    <div class="menu-footer">
+                        <div class="rating">
+                            ⭐ 4.8 <span>(289)</span>
+                        </div>
+                        <button class="btn-add">Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="principales">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=250&fit=crop" alt="Filete Mignon">
+                <div class="menu-content">
+                    <span class="category-label">Plato Principal</span>
+                    <div class="menu-header">
+                        <h3>Filete Mignon</h3>
+                        <span class="price">$24.00</span>
+                    </div>
+                    <p class="description">
+                        Corte premium de res, cocción al punto, con puré de papas 
+                        trufado y espárragos a la mantequilla.
+                    </p>
+                    <div class="tags">
+                        <span class="tag gluten-free">Sin Gluten</span>
+                        <span class="tag premium">Premium</span>
+                    </div>
+                    <div class="menu-footer">
+                        <div class="rating">
+                            ⭐ 5.0 <span>(124)</span>
+                        </div>
+                        <button class="btn-add">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section alt">
+        <h2>Bebidas</h2>
+        
+        <div class="menu-grid">
+            
+            <div class="menu-item" data-category="bebidas">
+                <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400&h=250&fit=crop" alt="Jugo natural">
+                <div class="menu-content">
+                    <span class="category-label">Bebida</span>
+                    <div class="menu-header">
+                        <h3>Jugo Natural</h3>
+                        <span class="price">$5.00</span>
+                    </div>
+                    <p class="description">
+                        Naranja, fresa, sandía o piña. Recién exprimido sin azúcar añadida.
+                    </p>
+                    <div class="tags">
+                        <span class="tag vegetarian">Vegano</span>
+                    </div>
+                    <div class="menu-footer">
+                        <div class="rating">
+                            ⭐ 4.8 <span>(92)</span>
+                        </div>
+                        <button class="btn-add">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-item" data-category="bebidas">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=250&fit=crop" alt="Café americano">
+                <div class="menu-content">
+                    <span class="category-label">Bebida</span>
+                    <div class="menu-header">
+                        <h3>Café Americano</h3>
+                        <span class="price">$3.50</span>
+                    </div>
+                    <p class="description">
+                        Granos de origen especial de Colombia, tostado medio.
+                    </p>
+                    <div class="tags">
+                        <span class="tag vegetarian">Vegano</span>
+                    </div>
+                    <div class="menu-footer">
+                        <div class="rating">
+                            ⭐ 4.9 <span>(234)</span>
+                        </div>
+                        <button class="btn-add">Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="bebidas">
+                <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=250&fit=crop" alt="Limonada">
+                <div class="menu-content">
+                    <span class="category-label">Bebida</span>
+                    <div class="menu-header">
+                        <h3>Limonada de Hierbabuena</h3>
+                        <span class="price">$4.50</span>
+                    </div>
+                    <p class="description">
+                        Limones frescos, hierbabuena del huerto y un toque de miel.
+                    </p>
+                    <div class="tags">
+                        <span class="tag vegetarian">Vegano</span>
+                    </div>
+                    <div class="menu-footer">
+                        <div class="rating">
+                            ⭐ 4.7 <span>(145)</span>
+                        </div>
+                        <button class="btn-add">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Postres</h2>
+        
+        <div class="menu-grid">
+            <div class="menu-item" data-category="postres">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=250&fit=crop" alt="Tiramisú">
+                <div class="menu-content">
+                    <span class="category-label">Postre</span>
+                    <div class="menu-header">
+                        <h3>Tiramisú Clásico</h3>
+                        <span class="price">$7.50</span>
+                    </div>
+                    <p class="description">
+                        Capas de bizcocho empapado en café espresso y crema de mascarpone.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Clásico</span>
+                    </div>
+                    <div class="menu-footer">
+                        <div class="rating">
+                            ⭐ 4.9 <span>(312)</span>
+                        </div>
+                        <button class="btn-add">Agregar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="postres">
+                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&h=250&fit=crop" alt="Cheesecake">
+                <div class="menu-content">
+                    <span class="category-label">Postre</span>
+                    <div class="menu-header">
+                        <h3>Cheesecake de Frutos Rojos</h3>
+                        <span class="price">$8.00</span>
+                    </div>
+                    <p class="description">
+                        Base de galleta, relleno cremoso y coulis de frutos rojos.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Recomendado</span>
+                    </div>
+                    <div class="menu-footer">
+                        <div class="rating">
+                            ⭐ 4.8 <span>(267)</span>
+                        </div>
+                        <button class="btn-add">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 La Buena Mesa - Todos los derechos reservados</p>
+        <p>📍 Av. Principal 123, Cuenca | 📞 (07) 123-4567 | ✉️ info@labuenamesa.com</p>
+    </footer>
+
+    <script src="../js/menu.js"></script>
+</body>
+</html>

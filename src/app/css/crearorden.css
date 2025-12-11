@@ -1,0 +1,629 @@
+/* ============================================
+   CREARORDEN.CSS - ESTILO RÚSTICO-MODERNO
+   ============================================ */
+
+/* RESET Y BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --tierra: #8b4513;
+  --madera: #a0522d;
+  --crema: #f5e6d3;
+  --verde-olivo: #556b2f;
+  --terracota: #c05746;
+  --negro-suave: #2b2b2b;
+  --blanco-roto: #faf8f3;
+}
+
+body {
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  line-height: 1.7;
+  color: var(--negro-suave);
+  background: 
+    linear-gradient(rgba(250, 248, 243, 0.95), rgba(250, 248, 243, 0.95)),
+    url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" fill="%23f5e6d3"/><path d="M0 0L60 60M60 0L0 60" stroke="%23e0d4c0" stroke-width="0.5"/></svg>');
+  background-size: auto, 60px 60px;
+  background-attachment: fixed;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+header {
+  background: 
+    linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(85, 107, 47, 0.95) 100%),
+    url('https://images.unsplash.com/photo-1513151233558-d860c5398176?w=1920') center/cover;
+  box-shadow: 0 8px 32px rgba(43, 43, 43, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 4px solid var(--terracota);
+  padding: 20px 0;
+}
+
+header h1 {
+  text-align: center;
+  color: var(--crema);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--crema);
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  letter-spacing: 0.5px;
+}
+
+nav a:hover {
+  background: rgba(192, 87, 70, 0.8);
+  border-color: var(--crema);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+
+.order-hero {
+  background: 
+    linear-gradient(135deg, rgba(139, 69, 19, 0.85) 0%, rgba(85, 107, 47, 0.85) 100%),
+    url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920') center/cover;
+  background-attachment: fixed;
+  color: var(--crema);
+  text-align: center;
+  padding: 80px 20px;
+  margin-bottom: 40px;
+}
+
+.order-hero h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.order-hero p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  font-style: italic;
+}
+
+/* ============================================
+   CONTAINER
+   ============================================ */
+
+.order-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ============================================
+   CART SECTION
+   ============================================ */
+
+.cart-section {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.cart-items {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 
+    0 8px 30px rgba(43, 43, 43, 0.12),
+    inset 0 1px 0 rgba(255,255,255,0.8);
+  border: 3px solid var(--crema);
+}
+
+.cart-items h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: var(--tierra);
+  font-weight: 700;
+}
+
+/* ============================================
+   CART ITEM
+   ============================================ */
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 120px 1fr auto auto;
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  border: 3px solid var(--crema);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: all 0.3s;
+  background: linear-gradient(135deg, white 0%, var(--blanco-roto) 100%);
+}
+
+.cart-item:hover {
+  border-color: var(--terracota);
+  box-shadow: 0 5px 15px rgba(192, 87, 70, 0.15);
+  transform: translateX(5px);
+}
+
+.cart-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid var(--crema);
+}
+
+.cart-info h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--tierra);
+  font-weight: 700;
+}
+
+.cart-info p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+}
+
+.tag {
+  background: var(--crema);
+  color: var(--tierra);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 2px solid var(--tierra);
+}
+
+.tag.vegetarian {
+  background: var(--verde-olivo);
+  color: white;
+  border-color: var(--verde-olivo);
+}
+
+/* ============================================
+   QUANTITY
+   ============================================ */
+
+.cart-quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--crema);
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: 2px solid var(--tierra);
+}
+
+.qty-btn {
+  background: var(--tierra);
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 700;
+}
+
+.qty-btn:hover {
+  background: var(--terracota);
+  transform: scale(1.1);
+}
+
+.qty {
+  font-weight: 600;
+  font-size: 1.1rem;
+  min-width: 30px;
+  text-align: center;
+  color: var(--tierra);
+}
+
+/* ============================================
+   PRICE
+   ============================================ */
+
+.cart-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.price {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--terracota);
+}
+
+.btn-remove {
+  background: var(--terracota);
+  border: 2px solid white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+  color: white;
+}
+
+.btn-remove:hover {
+  background: #a03d2e;
+  transform: scale(1.1);
+}
+
+/* ============================================
+   ORDER SUMMARY
+   ============================================ */
+
+.order-summary {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 
+    0 8px 30px rgba(43, 43, 43, 0.12),
+    inset 0 1px 0 rgba(255,255,255,0.8);
+  border: 3px solid var(--crema);
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.order-summary h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+  color: var(--tierra);
+  font-weight: 700;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  font-size: 1rem;
+  color: #555;
+  border-bottom: 1px solid var(--crema);
+}
+
+.summary-row.total {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--tierra);
+  border-top: 3px solid var(--terracota);
+  border-bottom: none;
+  padding-top: 20px;
+  margin-top: 10px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--crema);
+  margin: 15px 0;
+}
+
+/* ============================================
+   ORDER TYPE
+   ============================================ */
+
+.order-type {
+  margin: 25px 0;
+}
+
+.order-type h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: var(--tierra);
+  font-weight: 700;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border: 3px solid var(--crema);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, white 0%, var(--blanco-roto) 100%);
+}
+
+.radio-option:hover {
+  border-color: var(--terracota);
+  background: var(--crema);
+  transform: translateX(5px);
+}
+
+.radio-option input {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--terracota);
+}
+
+/* ============================================
+   FORM GROUPS
+   ============================================ */
+
+.form-group {
+  margin: 25px 0;
+}
+
+.form-group h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: var(--tierra);
+  font-weight: 700;
+}
+
+.form-select,
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 3px solid var(--crema);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s;
+  background: white;
+}
+
+.form-select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--terracota);
+  box-shadow: 0 4px 20px rgba(192, 87, 70, 0.2);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn-confirm {
+  width: 100%;
+  background: linear-gradient(135deg, var(--tierra) 0%, var(--verde-olivo) 100%);
+  color: white;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: 3px solid var(--crema);
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s;
+  box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.btn-confirm:hover {
+  background: linear-gradient(135deg, var(--terracota) 0%, var(--madera) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+}
+
+.btn-continue {
+  display: block;
+  width: 100%;
+  background: transparent;
+  color: var(--tierra);
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 3px solid var(--tierra);
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.btn-continue:hover {
+  background: var(--tierra);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   COUPON
+   ============================================ */
+
+.coupon-section {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 
+    0 8px 30px rgba(43, 43, 43, 0.12),
+    inset 0 1px 0 rgba(255,255,255,0.8);
+  border: 3px solid var(--crema);
+  text-align: center;
+}
+
+.coupon-section h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: var(--tierra);
+  font-weight: 700;
+}
+
+.coupon-input {
+  display: flex;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.coupon-input input {
+  flex: 1;
+  padding: 12px 20px;
+  border: 3px solid var(--crema);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.coupon-input input:focus {
+  outline: none;
+  border-color: var(--terracota);
+}
+
+.coupon-input button {
+  background: var(--terracota);
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.coupon-input button:hover {
+  background: var(--madera);
+  transform: scale(1.05);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+  background: 
+    linear-gradient(135deg, rgba(43, 43, 43, 0.97) 0%, rgba(43, 43, 43, 0.97) 100%),
+    url('https://images.unsplash.com/photo-1513151233558-d860c5398176?w=1920') center/cover;
+  color: var(--crema);
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 80px;
+  border-top: 5px solid var(--terracota);
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+}
+
+footer p {
+  margin: 10px 0;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .cart-section {
+    grid-template-columns: 1fr;
+  }
+
+  .order-summary {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .order-hero h1 {
+    font-size: 2rem;
+  }
+
+  .cart-item {
+    grid-template-columns: 80px 1fr;
+    gap: 15px;
+  }
+
+  .cart-quantity,
+  .cart-price {
+    grid-column: 1 / -1;
+  }
+
+  .cart-price {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .coupon-input {
+    flex-direction: column;
+  }
+}
+
+/* ============================================
+   DETALLES FINALES
+   ============================================ */
+
+::selection {
+  background: var(--terracota);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--crema);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--tierra);
+  border-radius: 6px;
+  border: 2px solid var(--crema);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--terracota);
+}
